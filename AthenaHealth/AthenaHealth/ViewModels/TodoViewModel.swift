@@ -27,7 +27,6 @@ class TodoViewModel: ObservableObject{
         }
         
         func fetchToDos() {
-            guard let url = APIEndpoint.todos.url else { return }
             
             networkService.fetch(from: .todos)
                        .sink(receiveCompletion: { completion in
